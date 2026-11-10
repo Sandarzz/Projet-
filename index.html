@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Discover Algeria — Découvrez l'Algérie</title>
+<meta name="description" content="Partez à la découverte de l'Algérie : son histoire millénaire, sa culture amazighe, arabe et andalouse, et ses paysages de la Méditerranée au Sahara." />
+
+<!-- Polices : Marcellus (titres), Jost (texte), Amiri (arabe) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Jost:wght@300;400;500;600&amp;family=Marcellus&amp;display=swap" />
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<!-- Icônes SVG réutilisables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="etoile" viewBox="0 0 48 48">
+<g fill="none" stroke="currentColor" stroke-width="1.6">
+<rect x="11" y="11" width="26" height="26" />
+<rect x="11" y="11" width="26" height="26" transform="rotate(45 24 24)" />
+<circle cx="24" cy="24" r="5" />
+</g>
+</symbol>
+<symbol id="fleche-droite" viewBox="0 0 24 24">
+<path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</symbol>
+<symbol id="fleche-bas" viewBox="0 0 24 24">
+<path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</symbol>
+</svg>
+
+<!-- ===== En-tête ===== -->
+<header class="entete">
+<div class="bande-drapeau"></div>
+<div class="barre">
+<input type="checkbox" id="menu" class="menu-case" />
+<div class="container">
+<a href="index.html" class="logo">
+<svg class="etoile"><use href="#etoile" /></svg>
+<span class="logo-texte">
+<span class="logo-nom">Discover Algeria</span>
+<span class="logo-arabe arabe" lang="ar">اكتشف الجزائر</span>
+</span>
+</a>
+
+<nav class="nav" aria-label="Navigation principale">
+<a href="index.html" class="actif" aria-current="page">Accueil</a>
+<a href="destinations.html">Destinations</a>
+</nav>
+
+<label for="menu" class="burger" aria-label="Ouvrir le menu">
+<span></span><span></span><span></span>
+</label>
+</div>
+
+<nav class="nav-mobile" aria-label="Navigation mobile">
+<ul>
+<li><a href="index.html" class="actif" aria-current="page"><svg class="etoile"><use href="#etoile" /></svg>Accueil</a></li>
+<li><a href="destinations.html"><svg class="etoile"><use href="#etoile" /></svg>Destinations</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<!-- ===== Bannière ===== -->
+<section class="hero">
+<img class="hero-image" src="images/casbah.jpg" alt="La Casbah d'Alger au coucher du soleil, face à la Méditerranée" width="1920" height="1088" />
+<div class="hero-voile"></div>
+<div class="motif-zellige"></div>
+
+<div class="container hero-contenu">
+<p class="hero-arabe arabe apparition" lang="ar">مرحبا بكم</p>
+<p class="surtitre apparition delai-1">Bienvenue en Algérie</p>
+<h1 class="apparition delai-2">Découvrez l'Algérie</h1>
+<p class="intro apparition delai-3">
+De la Casbah blanche aux dunes dorées du Sahara, un pays immense où se rencontrent
+Méditerranée, montagnes et désert.
+</p>
+<div class="hero-boutons apparition delai-4">
+<a href="destinations.html" class="btn btn-rouge">Explorer les destinations <svg><use href="#fleche-droite" /></svg></a>
+<a href="#decouvrir" class="btn btn-clair">Découvrir le pays <svg><use href="#fleche-bas" /></svg></a>
+</div>
+</div>
+</section>
+
+<div class="bande-drapeau"></div>
+
+<!-- ===== Introduction ===== -->
+<section id="decouvrir" class="section">
+<div class="motif-zellige"></div>
+<div class="container">
+<div class="titre-section">
+<p class="surtitre">Introduction</p>
+<p class="arabe" lang="ar">الجزائر</p>
+<h2>Une terre de lumière et d'histoire</h2>
+<div class="separateur"><svg class="etoile"><use href="#etoile" /></svg></div>
+<p>
+Bordée par la Méditerranée au nord et ouverte sur le Sahara au sud, l'Algérie offre une
+incroyable diversité de paysages : plages, forêts de cèdres, chaînes de l'Atlas, oasis
+et immensités désertiques. C'est aussi un pays de mémoire, riche de cités antiques, de
+médinas et de traditions vivantes.
+</p>
+</div>
+
+<div class="chiffres">
+<div class="chiffre"><strong>2 381 741</strong><span>km²</span><p>Le plus grand pays d'Afrique</p></div>
+<div class="chiffre"><strong>1 600</strong><span>km</span><p>De côtes méditerranéennes</p></div>
+<div class="chiffre"><strong>7</strong><span>sites</span><p>Inscrits au patrimoine de l'UNESCO</p></div>
+<div class="chiffre"><strong>58</strong><span>wilayas</span><p>Autant de régions à explorer</p></div>
+</div>
+</div>
+</section>
+
+<!-- ===== Culture ===== -->
+<section class="section section-sable">
+<div class="container culture">
+<div class="arche">
+<img src="images/artisanat.jpg" alt="Poterie kabyle, bijoux berbères en argent et thé à la menthe" width="1200" height="1504" loading="lazy" />
+<svg class="etoile"><use href="#etoile" /></svg>
+</div>
+
+<div>
+<div class="titre-section gauche">
+<p class="surtitre">Identité culturelle</p>
+<p class="arabe" lang="ar">التراث</p>
+<h2>Un patrimoine vivant</h2>
+<div class="separateur gauche"><svg class="etoile"><use href="#etoile" /></svg></div>
+<p>
+L'identité algérienne est une mosaïque. Elle se lit dans les motifs des tapis,
+résonne dans la musique et se partage autour d'une table généreuse.
+</p>
+</div>
+<ul class="liste-culture">
+<li>
+<span class="numero">01</span>
+<div>
+<h3>Un héritage pluriel</h3>
+<p>Numides, Romains, Arabes, Andalous et Ottomans ont façonné une identité unique, enracinée dans la culture amazighe.</p>
+</div>
+</li>
+<li>
+<span class="numero">02</span>
+<div>
+<h3>Musique &amp; poésie</h3>
+<p>Du raï d'Oran au chaâbi d'Alger, en passant par le malouf de Constantine, chaque région chante son âme.</p>
+</div>
+</li>
+<li>
+<span class="numero">03</span>
+<div>
+<h3>Art de vivre</h3>
+<p>Couscous partagé, thé à la menthe, poteries peintes et bijoux d'argent : l'hospitalité est un art.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- ===== Aperçu des destinations ===== -->
+<section class="section">
+<div class="container">
+<div class="titre-section">
+<p class="surtitre">Destinations</p>
+<p class="arabe" lang="ar">وجهات</p>
+<h2>Quatre visages de l'Algérie</h2>
+<div class="separateur"><svg class="etoile"><use href="#etoile" /></svg></div>
+<p>De la mer au désert, laissez-vous guider vers les lieux incontournables du pays.</p>
+</div>
+<div class="cartes">
+<a href="destinations.html#casbah" class="carte">
+<img src="images/casbah.jpg" alt="La Casbah d'Alger" width="1920" height="1088" loading="lazy" />
+<div class="carte-texte">
+<p class="arabe" lang="ar">قصبة الجزائر</p>
+<h3>La Casbah d'Alger</h3>
+<p>La médina blanche face à la mer <svg><use href="#fleche-droite" /></svg></p>
+</div>
+</a>
+<a href="destinations.html#sahara" class="carte">
+<img src="images/sahara.jpg" alt="Le Sahara" width="1600" height="1072" loading="lazy" />
+<div class="carte-texte">
+<p class="arabe" lang="ar">الصحراء الكبرى</p>
+<h3>Le Sahara</h3>
+<p>L'immensité dorée des dunes <svg><use href="#fleche-droite" /></svg></p>
+</div>
+</a>
+<a href="destinations.html#kabylie" class="carte">
+<img src="images/kabylie.jpg" alt="La Kabylie" width="1600" height="1072" loading="lazy" />
+<div class="carte-texte">
+<p class="arabe" lang="ar">منطقة القبائل</p>
+<h3>La Kabylie</h3>
+<p>Montagnes, villages et traditions amazighes <svg><use href="#fleche-droite" /></svg></p>
+</div>
+</a>
+<a href="destinations.html#constantine" class="carte">
+<img src="images/constantine.jpg" alt="Constantine" width="1600" height="1072" loading="lazy" />
+<div class="carte-texte">
+<p class="arabe" lang="ar">قسنطينة</p>
+<h3>Constantine</h3>
+<p>La ville des ponts suspendus <svg><use href="#fleche-droite" /></svg></p>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<!-- ===== Citation ===== -->
+<section class="citation">
+<div class="motif-zellige"></div>
+<div class="container">
+<svg class="etoile"><use href="#etoile" /></svg>
+<blockquote>« Qui a bu l'eau de l'Algérie y revient toujours. »</blockquote>
+<p class="source">Proverbe populaire</p>
+<a href="destinations.html" class="btn btn-rouge">Commencer le voyage <svg><use href="#fleche-droite" /></svg></a>
+</div>
+</section>
+</main>
+
+<!-- ===== Pied de page ===== -->
+<footer class="pied">
+<div class="motif-frise"></div>
+<div class="motif-zellige"></div>
+<div class="container pied-grille">
+<div>
+<a href="index.html" class="logo">
+<svg class="etoile"><use href="#etoile" /></svg>
+<span class="logo-nom">Discover Algeria</span>
+</a>
+<p class="pied-texte">
+Un voyage à travers l'Algérie, son identité culturelle et ses richesses touristiques.
+</p>
+</div>
+<div>
+<p class="surtitre">Explorer</p>
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+</ul>
+</div>
+<div>
+<p class="surtitre">Devise</p>
+<p class="pied-devise arabe" lang="ar">مرحبا بكم في الجزائر</p>
+<p class="pied-petit">Bienvenue en Algérie</p>
+</div>
+</div>
+<div class="pied-bas">
+<div class="container">
+<span>© 2026 Discover Algeria</span>
+<span class="bande-drapeau"></span>
+</div>
+</div>
+</footer>
+</body>
+</html>

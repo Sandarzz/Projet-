@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Destinations — Discover Algeria</title>
+<meta name="description" content="La Casbah d'Alger, le Sahara, la Kabylie et Constantine : les lieux touristiques incontournables de l'Algérie." />
+
+<!-- Polices : Marcellus (titres), Jost (texte), Amiri (arabe) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Jost:wght@300;400;500;600&amp;family=Marcellus&amp;display=swap" />
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<!-- Icônes SVG réutilisables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="etoile" viewBox="0 0 48 48">
+<g fill="none" stroke="currentColor" stroke-width="1.6">
+<rect x="11" y="11" width="26" height="26" />
+<rect x="11" y="11" width="26" height="26" transform="rotate(45 24 24)" />
+<circle cx="24" cy="24" r="5" />
+</g>
+</symbol>
+<symbol id="fleche-droite" viewBox="0 0 24 24">
+<path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</symbol>
+<symbol id="lieu" viewBox="0 0 24 24">
+<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
+<circle cx="12" cy="10" r="3" />
+</g>
+</symbol>
+<symbol id="calendrier" viewBox="0 0 24 24">
+<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="4" width="18" height="18" rx="2" />
+<path d="M16 2v4M8 2v4M3 10h18" />
+</g>
+</symbol>
+</svg>
+
+<!-- ===== En-tête ===== -->
+<header class="entete">
+<div class="bande-drapeau"></div>
+<div class="barre">
+<input type="checkbox" id="menu" class="menu-case" />
+<div class="container">
+<a href="index.html" class="logo">
+<svg class="etoile"><use href="#etoile" /></svg>
+<span class="logo-texte">
+<span class="logo-nom">Discover Algeria</span>
+<span class="logo-arabe arabe" lang="ar">اكتشف الجزائر</span>
+</span>
+</a>
+
+<nav class="nav" aria-label="Navigation principale">
+<a href="index.html">Accueil</a>
+<a href="destinations.html" class="actif" aria-current="page">Destinations</a>
+</nav>
+
+<label for="menu" class="burger" aria-label="Ouvrir le menu">
+<span></span><span></span><span></span>
+</label>
+</div>
+
+<nav class="nav-mobile" aria-label="Navigation mobile">
+<ul>
+<li><a href="index.html"><svg class="etoile"><use href="#etoile" /></svg>Accueil</a></li>
+<li><a href="destinations.html" class="actif" aria-current="page"><svg class="etoile"><use href="#etoile" /></svg>Destinations</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<!-- ===== Bannière ===== -->
+<section class="hero court">
+<img class="hero-image" src="images/sahara.jpg" alt="Dunes et rochers du Tassili n'Ajjer au coucher du soleil" width="1600" height="1072" />
+<div class="hero-voile"></div>
+<div class="container hero-contenu">
+<p class="hero-arabe arabe apparition" lang="ar">وجهات سياحية</p>
+<h1 class="apparition delai-1">Destinations</h1>
+<p class="intro apparition delai-2">
+Quatre régions, quatre ambiances : la médina, le désert, la montagne et la ville suspendue.
+</p>
+</div>
+</section>
+
+<div class="bande-drapeau"></div>
+
+<!-- ===== Accès rapide ===== -->
+<nav class="nav-destinations" aria-label="Destinations">
+<div class="container">
+<a href="#casbah">Casbah d'Alger</a>
+<a href="#sahara">Sahara</a>
+<a href="#kabylie">Kabylie</a>
+<a href="#constantine">Constantine</a>
+</div>
+</nav>
+
+<!-- ===== Liste des destinations ===== -->
+<div class="liste-destinations">
+<div class="motif-zellige"></div>
+
+<!-- La Casbah d'Alger -->
+<section id="casbah" class="destination">
+<div class="container">
+<div class="destination-image">
+<img src="images/casbah.jpg" alt="La Casbah d'Alger" width="1920" height="1088" loading="lazy" />
+<span class="pastille">01</span>
+</div>
+<div>
+<p class="surtitre region"><svg><use href="#lieu" /></svg> Alger · Côte méditerranéenne</p>
+<p class="arabe" lang="ar">قصبة الجزائر</p>
+<h2>La Casbah d'Alger</h2>
+<p class="slogan">La médina blanche face à la mer</p>
+<div class="separateur gauche"><svg class="etoile"><use href="#etoile" /></svg></div>
+<p class="description">Classée au patrimoine mondial de l'UNESCO, la Casbah dévale la colline jusqu'à la baie d'Alger. Ses ruelles en escaliers, ses maisons à patio, ses mosquées ottomanes et ses portes sculptées racontent des siècles d'histoire berbère, arabe, andalouse et ottomane.</p>
+<ul class="points-forts">
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Le palais du Dey et la citadelle</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>La mosquée Ketchaoua</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Les terrasses avec vue sur la baie</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Les artisans dinandiers et ébénistes</span></li>
+</ul>
+<p class="saison"><svg><use href="#calendrier" /></svg> Meilleure période : <strong>Printemps et automne</strong></p>
+</div>
+</div>
+</section>
+
+<!-- Le Sahara -->
+<section id="sahara" class="destination inverse">
+<div class="container">
+<div class="destination-image">
+<img src="images/sahara.jpg" alt="Le Sahara" width="1600" height="1072" loading="lazy" />
+<span class="pastille">02</span>
+</div>
+<div>
+<p class="surtitre region"><svg><use href="#lieu" /></svg> Tassili n'Ajjer · Djanet · Tamanrasset</p>
+<p class="arabe" lang="ar">الصحراء الكبرى</p>
+<h2>Le Sahara</h2>
+<p class="slogan">L'immensité dorée des dunes</p>
+<div class="separateur gauche"><svg class="etoile"><use href="#etoile" /></svg></div>
+<p class="description">Plus de 80 % du territoire algérien est désertique. Au Tassili n'Ajjer, des forêts de pierre et des milliers de peintures rupestres veillent sur l'erg. Nuits étoilées, thé partagé avec les Touaregs et levers de soleil sur l'Assekrem : une expérience hors du temps.</p>
+<ul class="points-forts">
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Les gravures rupestres du Tassili</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Le plateau de l'Assekrem au lever du jour</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Les dunes de Tin Merzouga</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Les oasis et ksour de Ghardaïa</span></li>
+</ul>
+<p class="saison"><svg><use href="#calendrier" /></svg> Meilleure période : <strong>D'octobre à mars</strong></p>
+</div>
+</div>
+</section>
+
+<!-- La Kabylie -->
+<section id="kabylie" class="destination">
+<div class="container">
+<div class="destination-image">
+<img src="images/kabylie.jpg" alt="La Kabylie" width="1600" height="1072" loading="lazy" />
+<span class="pastille">03</span>
+</div>
+<div>
+<p class="surtitre region"><svg><use href="#lieu" /></svg> Tizi Ouzou · Béjaïa · Djurdjura</p>
+<p class="arabe" lang="ar">منطقة القبائل</p>
+<h2>La Kabylie</h2>
+<p class="slogan">Montagnes, villages et traditions amazighes</p>
+<div class="separateur gauche"><svg class="etoile"><use href="#etoile" /></svg></div>
+<p class="description">Entre les sommets du Djurdjura et la Méditerranée, la Kabylie offre des villages perchés, des oliveraies centenaires et des forêts de cèdres. Terre de la culture amazighe, elle est réputée pour ses bijoux en argent, ses poteries peintes et l'hospitalité de ses habitants.</p>
+<ul class="points-forts">
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Le parc national du Djurdjura</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Les villages de Beni Yenni et leurs bijoutiers</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Le cap Carbon et la côte de Béjaïa</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>La fête de l'olive en hiver</span></li>
+</ul>
+<p class="saison"><svg><use href="#calendrier" /></svg> Meilleure période : <strong>D'avril à octobre</strong></p>
+</div>
+</div>
+</section>
+
+<!-- Constantine -->
+<section id="constantine" class="destination inverse">
+<div class="container">
+<div class="destination-image">
+<img src="images/constantine.jpg" alt="Constantine" width="1600" height="1072" loading="lazy" />
+<span class="pastille">04</span>
+</div>
+<div>
+<p class="surtitre region"><svg><use href="#lieu" /></svg> Est algérien · Gorges du Rhumel</p>
+<p class="arabe" lang="ar">قسنطينة</p>
+<h2>Constantine</h2>
+<p class="slogan">La ville des ponts suspendus</p>
+<div class="separateur gauche"><svg class="etoile"><use href="#etoile" /></svg></div>
+<p class="description">Perchée sur un rocher et entaillée par les gorges vertigineuses du Rhumel, Constantine est l'une des plus anciennes villes du monde. Ses ponts suspendus, sa vieille médina et son palais Ahmed Bey en font la capitale culturelle de l'Est et le berceau du malouf.</p>
+<ul class="points-forts">
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Le pont suspendu de Sidi M'Cid</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Le palais Ahmed Bey</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Le monument aux morts dominant la ville</span></li>
+<li><svg class="etoile"><use href="#etoile" /></svg><span>Les concerts de musique malouf</span></li>
+</ul>
+<p class="saison"><svg><use href="#calendrier" /></svg> Meilleure période : <strong>Printemps et automne</strong></p>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ===== Fin de page ===== -->
+<section class="fin-page">
+<div class="motif-frise"></div>
+<div class="container">
+<h2>L'Algérie vous attend</h2>
+<p>Retournez à l'accueil pour en apprendre davantage sur l'histoire et la culture du pays.</p>
+<a href="index.html" class="btn btn-clair">Retour à l'accueil <svg><use href="#fleche-droite" /></svg></a>
+</div>
+</section>
+</main>
+
+<!-- ===== Pied de page ===== -->
+<footer class="pied">
+<div class="motif-frise"></div>
+<div class="motif-zellige"></div>
+<div class="container pied-grille">
+<div>
+<a href="index.html" class="logo">
+<svg class="etoile"><use href="#etoile" /></svg>
+<span class="logo-nom">Discover Algeria</span>
+</a>
+<p class="pied-texte">
+Un voyage à travers l'Algérie, son identité culturelle et ses richesses touristiques.
+</p>
+</div>
+<div>
+<p class="surtitre">Explorer</p>
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+</ul>
+</div>
+<div>
+<p class="surtitre">Devise</p>
+<p class="pied-devise arabe" lang="ar">مرحبا بكم في الجزائر</p>
+<p class="pied-petit">Bienvenue en Algérie</p>
+</div>
+</div>
+<div class="pied-bas">
+<div class="container">
+<span>© 2026 Discover Algeria</span>
+<span class="bande-drapeau"></span>
+</div>
+</div>
+</footer>
+</body>
+</html>

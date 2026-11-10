@@ -1,0 +1,1194 @@
+/* =========================================================
+   Discover Algeria — Feuille de style principale (CSS3)
+   Couleurs du drapeau algérien : vert, blanc, rouge
+   + une touche d'or inspirée de l'artisanat traditionnel
+   ========================================================= */
+
+/* ---------- 1. Variables ---------- */
+:root {
+  --vert: #006233;
+  --vert-fonce: #0b3a26;
+  --rouge: #d21034;
+  --blanc: #fbf8f1;
+  --or: #d4a64a;
+  --sable: #f3ece0;
+  --texte: #13281d;
+  --texte-doux: #5f6e64;
+  --bordure: #e6dccb;
+
+  --police-titre: "Marcellus", "Times New Roman", serif;
+  --police-texte: "Jost", system-ui, sans-serif;
+  --police-arabe: "Amiri", serif;
+
+  --rayon: 16px;
+  --ombre-carte: 0 30px 60px -30px rgba(11, 58, 38, 0.45);
+  --ombre-rouge: 0 12px 30px -12px rgba(210, 16, 52, 0.7);
+
+  --drapeau: linear-gradient(
+    90deg,
+    var(--vert) 0 33.33%,
+    var(--blanc) 33.33% 66.66%,
+    var(--rouge) 66.66% 100%
+  );
+
+  /* Motif zellige : étoile à huit branches (masque SVG) */
+  --motif-zellige: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.2'%3E%3Cpath d='M40 10 L48 32 L70 40 L48 48 L40 70 L32 48 L10 40 L32 32 Z'/%3E%3Crect x='25' y='25' width='30' height='30' transform='rotate(45 40 40)'/%3E%3Crect x='25' y='25' width='30' height='30'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3Cpath d='M0 0 L10 10 M80 0 L70 10 M0 80 L10 70 M80 80 L70 70'/%3E%3C/g%3E%3C/svg%3E");
+  /* Frise berbère : losanges */
+  --motif-frise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='16' viewBox='0 0 40 16'%3E%3Cpath d='M0 8 L8 0 L16 8 L8 16 Z M20 8 L24 4 L28 8 L24 12 Z M32 8 L36 4 L40 8 L36 12 Z' fill='%23000'/%3E%3C/svg%3E");
+}
+
+/* ---------- 2. Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--police-texte);
+  background-color: var(--blanc);
+  color: var(--texte);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--police-titre);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+[id] {
+  scroll-margin-top: 140px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.arabe {
+  font-family: var(--police-arabe);
+  direction: rtl;
+  text-align: left;
+  unicode-bidi: plaintext;
+}
+
+.surtitre {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* ---------- 3. Motifs traditionnels ---------- */
+.motif-zellige {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: currentColor;
+  -webkit-mask-image: var(--motif-zellige);
+  mask-image: var(--motif-zellige);
+  -webkit-mask-size: 80px 80px;
+  mask-size: 80px 80px;
+}
+
+.motif-frise {
+  height: 16px;
+  background-color: currentColor;
+  -webkit-mask-image: var(--motif-frise);
+  mask-image: var(--motif-frise);
+  -webkit-mask-size: 40px 16px;
+  mask-size: 40px 16px;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+}
+
+.bande-drapeau {
+  height: 6px;
+  background: var(--drapeau);
+}
+
+.etoile {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.separateur {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  color: var(--or);
+}
+
+.separateur::before,
+.separateur::after {
+  content: "";
+  width: 56px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.separateur .etoile {
+  width: 20px;
+  height: 20px;
+}
+
+.separateur.gauche {
+  justify-content: flex-start;
+}
+
+/* ---------- 4. Boutons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-rouge {
+  background: var(--rouge);
+  color: #fff;
+  box-shadow: var(--ombre-rouge);
+}
+
+.btn-rouge:hover {
+  background: #b80d2c;
+  transform: translateY(-2px);
+}
+
+.btn-clair {
+  border: 1px solid rgba(251, 248, 241, 0.6);
+  background: rgba(251, 248, 241, 0.1);
+  color: var(--blanc);
+  backdrop-filter: blur(4px);
+}
+
+.btn-clair:hover {
+  background: var(--blanc);
+  color: var(--vert);
+}
+
+/* ---------- 5. En-tête & navigation ---------- */
+.entete {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+.barre {
+  background: rgba(11, 58, 38, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(251, 248, 241, 0.1);
+}
+
+.barre .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--blanc);
+}
+
+.logo .etoile {
+  width: 32px;
+  height: 32px;
+  color: var(--or);
+  transition: transform 0.7s ease;
+}
+
+.logo:hover .etoile {
+  transform: rotate(45deg);
+}
+
+.logo-texte {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-nom {
+  font-family: var(--police-titre);
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+}
+
+.logo-arabe {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--or);
+}
+
+.nav {
+  display: none;
+  gap: 8px;
+}
+
+.nav a {
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: rgba(251, 248, 241, 0.8);
+  transition: color 0.3s, background 0.3s;
+}
+
+.nav a:hover {
+  color: var(--blanc);
+}
+
+.nav a.actif {
+  background: rgba(251, 248, 241, 0.1);
+  color: var(--blanc);
+}
+
+/* Menu mobile en pur CSS (case à cocher cachée) */
+.menu-case {
+  display: none;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  background: var(--blanc);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-case:checked ~ .container .burger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-case:checked ~ .container .burger span:nth-child(2) {
+  opacity: 0;
+}
+.menu-case:checked ~ .container .burger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-mobile {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.menu-case:checked ~ .nav-mobile {
+  max-height: 240px;
+  border-top: 1px solid rgba(251, 248, 241, 0.1);
+}
+
+.nav-mobile ul {
+  padding: 12px 20px;
+}
+
+.nav-mobile a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(251, 248, 241, 0.1);
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+  color: rgba(251, 248, 241, 0.8);
+}
+
+.nav-mobile li:last-child a {
+  border-bottom: 0;
+}
+
+.nav-mobile a.actif {
+  color: var(--blanc);
+}
+
+.nav-mobile .etoile {
+  width: 16px;
+  height: 16px;
+  color: var(--or);
+}
+
+/* ---------- 6. Bannière (hero) ---------- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--vert-fonce);
+  color: var(--blanc);
+}
+
+.hero.court {
+  min-height: 70vh;
+  min-height: 70svh;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoom-lent 8s ease-out both;
+}
+
+.hero-voile {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 58, 38, 0.55) 0%,
+    rgba(11, 58, 38, 0.25) 40%,
+    rgba(11, 58, 38, 0.85) 100%
+  );
+}
+
+.hero .motif-zellige {
+  color: var(--blanc);
+  opacity: 0.06;
+}
+
+.hero-contenu {
+  position: relative;
+  padding-top: 128px;
+  padding-bottom: 64px;
+}
+
+.hero-arabe {
+  font-size: 2rem;
+  color: var(--or);
+}
+
+.hero .surtitre {
+  margin-top: 12px;
+  color: rgba(251, 248, 241, 0.8);
+}
+
+.hero h1 {
+  max-width: 48rem;
+  margin-top: 16px;
+  font-size: 3rem;
+  line-height: 1.05;
+}
+
+.hero p.intro {
+  max-width: 36rem;
+  margin-top: 24px;
+  color: rgba(251, 248, 241, 0.85);
+}
+
+.hero-boutons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.apparition {
+  animation: monter 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.delai-1 { animation-delay: 0.12s; }
+.delai-2 { animation-delay: 0.22s; }
+.delai-3 { animation-delay: 0.34s; }
+.delai-4 { animation-delay: 0.46s; }
+
+/* ---------- 7. Sections & titres ---------- */
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.section > .motif-zellige {
+  color: var(--vert);
+  opacity: 0.05;
+}
+
+.section-sable {
+  background: var(--sable);
+}
+
+.titre-section {
+  position: relative;
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.titre-section.gauche {
+  margin: 0;
+  text-align: left;
+}
+
+.titre-section .surtitre {
+  color: var(--rouge);
+}
+
+.titre-section .arabe {
+  margin-top: 12px;
+  font-size: 1.5rem;
+  color: var(--vert);
+  text-align: inherit;
+}
+
+.titre-section h2 {
+  margin-top: 12px;
+  font-size: 2.25rem;
+  color: var(--vert-fonce);
+}
+
+.titre-section p {
+  margin-top: 20px;
+  font-size: 1.05rem;
+  color: var(--texte-doux);
+}
+
+/* ---------- 8. Chiffres clés ---------- */
+.chiffres {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 56px;
+  overflow: hidden;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  background: var(--bordure);
+}
+
+.chiffre {
+  padding: 24px;
+  text-align: center;
+  background: #fff;
+}
+
+.chiffre strong {
+  font-family: var(--police-titre);
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: var(--vert);
+}
+
+.chiffre span {
+  margin-left: 4px;
+  font-size: 0.85rem;
+  color: var(--rouge);
+}
+
+.chiffre p {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--texte-doux);
+}
+
+/* ---------- 9. Culture ---------- */
+.culture {
+  display: grid;
+  gap: 48px;
+  align-items: center;
+}
+
+.arche {
+  position: relative;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.arche::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border: 1px solid rgba(212, 166, 74, 0.6);
+  border-radius: 999px 999px 20px 20px;
+}
+
+.arche img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 999px 999px 20px 20px;
+  box-shadow: var(--ombre-carte);
+}
+
+.arche .etoile {
+  position: absolute;
+  right: -16px;
+  bottom: -24px;
+  width: 64px;
+  height: 64px;
+  color: var(--rouge);
+  animation: tourner 40s linear infinite;
+}
+
+.liste-culture {
+  margin-top: 40px;
+}
+
+.liste-culture li {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.liste-culture .numero {
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+  color: var(--rouge);
+}
+
+.liste-culture h3 {
+  font-size: 1.25rem;
+  color: var(--vert-fonce);
+}
+
+.liste-culture p {
+  margin-top: 4px;
+  color: var(--texte-doux);
+}
+
+/* ---------- 10. Cartes destinations (accueil) ---------- */
+.cartes {
+  display: grid;
+  gap: 20px;
+  margin-top: 56px;
+}
+
+.carte {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre-carte);
+}
+
+.carte img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.carte:hover img {
+  transform: scale(1.05);
+}
+
+.carte::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(11, 58, 38, 0.92) 100%);
+}
+
+.carte-texte {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 24px;
+  color: var(--blanc);
+}
+
+.carte-texte .arabe {
+  font-size: 1.25rem;
+  color: var(--or);
+}
+
+.carte-texte h3 {
+  margin-top: 4px;
+  font-size: 1.9rem;
+}
+
+.carte-texte p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: rgba(251, 248, 241, 0.8);
+}
+
+.carte-texte svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.carte:hover .carte-texte svg {
+  transform: translateX(4px);
+}
+
+/* ---------- 11. Bandeau citation ---------- */
+.citation {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  text-align: center;
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+.citation .motif-zellige {
+  color: var(--blanc);
+  opacity: 0.08;
+}
+
+.citation .container {
+  position: relative;
+  max-width: 42rem;
+}
+
+.citation .etoile {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  color: var(--or);
+}
+
+.citation blockquote {
+  margin-top: 24px;
+  font-family: var(--police-titre);
+  font-size: 1.9rem;
+  line-height: 1.3;
+}
+
+.citation .source {
+  margin-top: 16px;
+  margin-bottom: 40px;
+  font-size: 0.85rem;
+  color: rgba(251, 248, 241, 0.7);
+}
+
+/* ---------- 12. Page Destinations ---------- */
+.nav-destinations {
+  position: sticky;
+  top: 70px;
+  z-index: 40;
+  border-bottom: 1px solid var(--bordure);
+  background: rgba(251, 248, 241, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.nav-destinations .container {
+  display: flex;
+  gap: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  overflow-x: auto;
+}
+
+.nav-destinations a {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border: 1px solid var(--bordure);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--vert-fonce);
+  transition: all 0.3s;
+}
+
+.nav-destinations a:hover {
+  border-color: var(--vert);
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+.liste-destinations {
+  position: relative;
+  overflow: hidden;
+}
+
+.liste-destinations > .motif-zellige {
+  color: var(--vert);
+  opacity: 0.04;
+}
+
+.destination {
+  position: relative;
+  padding: 64px 0;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.destination:last-child {
+  border-bottom: 0;
+}
+
+.destination .container {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+.destination-image {
+  position: relative;
+}
+
+.destination-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre-carte);
+}
+
+.pastille {
+  position: absolute;
+  top: -20px;
+  left: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--rouge);
+  box-shadow: var(--ombre-rouge);
+  font-family: var(--police-titre);
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.destination.inverse .pastille {
+  left: auto;
+  right: -8px;
+}
+
+.region {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--rouge);
+}
+
+.region svg {
+  width: 14px;
+  height: 14px;
+}
+
+.destination .arabe {
+  margin-top: 16px;
+  font-size: 1.5rem;
+  color: var(--vert);
+}
+
+.destination h2 {
+  margin-top: 4px;
+  font-size: 2.25rem;
+  color: var(--vert-fonce);
+}
+
+.slogan {
+  margin-top: 8px;
+  font-family: var(--police-titre);
+  font-size: 1.1rem;
+  color: var(--texte-doux);
+}
+
+.description {
+  margin-top: 20px;
+  color: rgba(19, 40, 29, 0.8);
+}
+
+.points-forts {
+  margin-top: 24px;
+}
+
+.points-forts li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.points-forts .etoile {
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  color: var(--vert);
+}
+
+.saison {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--sable);
+  font-size: 0.9rem;
+  color: var(--vert-fonce);
+}
+
+.saison svg {
+  width: 16px;
+  height: 16px;
+  color: var(--rouge);
+}
+
+.fin-page {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  text-align: center;
+  background: var(--vert-fonce);
+  color: var(--blanc);
+}
+
+.fin-page .motif-frise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: rgba(212, 166, 74, 0.7);
+}
+
+.fin-page .container {
+  max-width: 36rem;
+}
+
+.fin-page h2 {
+  font-size: 2rem;
+}
+
+.fin-page p {
+  margin: 16px 0 32px;
+  color: rgba(251, 248, 241, 0.75);
+}
+
+/* ---------- 13. Pied de page ---------- */
+.pied {
+  position: relative;
+  overflow: hidden;
+  background: var(--vert-fonce);
+  color: var(--blanc);
+}
+
+.pied > .motif-frise {
+  color: var(--rouge);
+}
+
+.pied > .motif-zellige {
+  color: var(--blanc);
+  opacity: 0.04;
+}
+
+.pied-grille {
+  position: relative;
+  display: grid;
+  gap: 40px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.pied .logo .etoile:hover {
+  transform: none;
+}
+
+.pied-texte {
+  max-width: 20rem;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: rgba(251, 248, 241, 0.7);
+}
+
+.pied .surtitre {
+  color: var(--or);
+}
+
+.pied ul {
+  margin-top: 16px;
+  font-size: 0.9rem;
+}
+
+.pied li {
+  margin-bottom: 8px;
+  color: rgba(251, 248, 241, 0.8);
+}
+
+.pied li a:hover {
+  color: var(--blanc);
+}
+
+.pied-devise {
+  margin-top: 16px;
+  font-size: 1.5rem;
+}
+
+.pied-petit {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: rgba(251, 248, 241, 0.6);
+}
+
+.pied-bas {
+  position: relative;
+  border-top: 1px solid rgba(251, 248, 241, 0.1);
+}
+
+.pied-bas .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-size: 0.75rem;
+  color: rgba(251, 248, 241, 0.5);
+}
+
+.pied-bas .bande-drapeau {
+  width: 96px;
+  height: 4px;
+  border-radius: 4px;
+}
+
+/* ---------- 14. Animations ---------- */
+@keyframes monter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoom-lent {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes tourner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- 15. Tablette & ordinateur ---------- */
+@media (min-width: 640px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .barre .container {
+    height: 80px;
+  }
+
+  .logo-nom {
+    font-size: 1.3rem;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .nav a {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .burger,
+  .nav-mobile {
+    display: none;
+  }
+
+  .hero-contenu {
+    padding-bottom: 96px;
+  }
+
+  .hero-arabe {
+    font-size: 2.4rem;
+  }
+
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero p.intro {
+    font-size: 1.1rem;
+  }
+
+  .hero-boutons {
+    flex-direction: row;
+  }
+
+  .section {
+    padding: 112px 0;
+  }
+
+  .titre-section h2,
+  .destination h2 {
+    font-size: 3rem;
+  }
+
+  .chiffre {
+    padding: 32px;
+  }
+
+  .chiffre strong {
+    font-size: 2.25rem;
+  }
+
+  .chiffre p {
+    font-size: 0.9rem;
+  }
+
+  .cartes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carte {
+    aspect-ratio: 4 / 3;
+  }
+
+  .carte-texte {
+    padding: 32px;
+  }
+
+  .citation blockquote {
+    font-size: 2.25rem;
+  }
+
+  .nav-destinations {
+    top: 86px;
+  }
+
+  .nav-destinations .container {
+    justify-content: center;
+  }
+
+  .destination {
+    padding: 96px 0;
+  }
+
+  .pastille {
+    left: -20px;
+  }
+
+  .destination.inverse .pastille {
+    right: -20px;
+  }
+
+  .fin-page h2 {
+    font-size: 2.25rem;
+  }
+
+  .pied-grille {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pied-devise {
+    text-align: right;
+  }
+
+  .pied-bas .container {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 6rem;
+  }
+
+  .culture {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .destination .container {
+    grid-template-columns: 7fr 5fr;
+    gap: 64px;
+  }
+
+  .destination.inverse .container {
+    grid-template-columns: 5fr 7fr;
+  }
+
+  .destination.inverse .destination-image {
+    order: 2;
+  }
+}
